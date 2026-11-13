@@ -2,7 +2,7 @@ package com.mrbysco.newworldbutton.util;
 
 import com.mrbysco.newworldbutton.config.NewWorldConfig;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screens.GenericDirtMessageScreen;
+import net.minecraft.client.gui.screens.GenericMessageScreen;
 import net.minecraft.client.gui.screens.worldselection.CreateWorldScreen;
 import net.minecraft.network.chat.Component;
 
@@ -12,7 +12,7 @@ public class PauseUtil {
 	private static final Runnable EXIT_RUNNABLE = () -> {
 		Minecraft mc = Minecraft.getInstance();
 		mc.level.disconnect();
-		mc.clearLevel(new GenericDirtMessageScreen(SAVING_LEVEL));
+		mc.disconnect(new GenericMessageScreen(SAVING_LEVEL));
 	};
 
 	public static void createWorld() {
