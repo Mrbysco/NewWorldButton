@@ -22,7 +22,7 @@ public class PauseUtil {
 		mc.execute(() -> {
 			CreateWorldScreen.openFresh(mc, null);
 			if (NewWorldConfig.CLIENT.createWorldImmediately.get()) {
-				if (mc.screen instanceof CreateWorldScreen createWorldScreen) {
+				if (mc.gui.screen() instanceof CreateWorldScreen createWorldScreen) {
 					createWorldScreen.onCreate();
 				}
 			}
