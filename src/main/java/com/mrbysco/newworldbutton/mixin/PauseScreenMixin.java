@@ -27,9 +27,9 @@ public abstract class PauseScreenMixin extends Screen {
 					ordinal = 0
 			)
 	)
-	public void newworldbutton$createPauseMenu(CallbackInfo ci, @Local(name = "gridlayout$rowhelper") GridLayout.RowHelper gridlayout$rowhelper) {
+	public void newworldbutton$createPauseMenu(CallbackInfo ci, @Local(name = "helper") GridLayout.RowHelper helper) {
 		if (minecraft.isLocalServer()) {
-			gridlayout$rowhelper.addChild(
+			helper.addChild(
 					Button.builder(Component.translatable("selectWorld.create"), (button) -> {
 						PauseUtil.createWorld();
 					}).width(204).build(),
